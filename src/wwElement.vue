@@ -1,7 +1,7 @@
 <template>
-    <div @click="toggleAccordion()">
-        <wwLayout path="contentLayout" />
-    </div>
+    <button @click="toggleAccordion()">
+        <wwLayout v-bind="$attrs" path="contentLayout" />
+    </button>
 </template>
 
 <script>
