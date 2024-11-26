@@ -1,5 +1,5 @@
 <template>
-    <button @click="toggleAccordion()">
+    <button @click="handleClick()">
         <wwLayout v-bind="$attrs" path="contentLayout" />
     </button>
 </template>
@@ -24,6 +24,13 @@ export default {
             toggleAccordion,
         };
     },
+    methods: {
+        handleClick() {
+            if (this.wwEditorState.editMode === wwLib.wwEditorHelper.EDIT_MODES.EDITION) {
+                toggleAccordion();
+            }
+        }
+    }
 };
 </script>
 
