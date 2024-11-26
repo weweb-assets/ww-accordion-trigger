@@ -16,6 +16,14 @@ export default {
     },
     states: ['focus', 'disabled'],
     properties: {
+        toggleAccordion: {
+            type: 'Button',
+            editorOnly: true,
+            options: {
+                text: { en: 'Toggle accordion' },
+                action: 'toggleAccordion',
+            },
+        },
         contentLayout: {
             hidden: true,
             defaultValue: [],
