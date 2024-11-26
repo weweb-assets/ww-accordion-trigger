@@ -8,6 +8,7 @@
 import { inject } from 'vue';
 
 export default {
+    inheritAttrs: false,
     props: {
         content: { type: Object, required: true },
         uid: { type: String, required: true },
