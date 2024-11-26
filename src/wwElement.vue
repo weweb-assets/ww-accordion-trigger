@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { inject, ref } from 'vue';
+import { inject } from 'vue';
 
 export default {
     inheritAttrs: false,
@@ -17,20 +17,26 @@ export default {
         /* wwEditor:end */
     },
     emits: [],
-    setup(props) {
-        const isEditing = ref(props.wwEditorState.value.editMode);
+    setup() {
         const { toggleAccordion } = inject('weweb-assets/ww-accordion-item');
-
-        const handleClick = () => {
-            if (isEditing.value === wwLib.wwEditorHelper.EDIT_MODES.EDITION) {
-                toggleAccordion();
-            }
-        };
 
         return {
             toggleAccordion,
-            handleClick,
         };
+    },
+    computed: {
+        isEditing() {
+            /* wwEditor:start */
+            return this.wwEditorState.editMode === wwLib.wwEditorHelper.EDIT_MODES.EDITION;
+            /* wwEditor:end */
+        },
+    },
+    methods: {
+        handleClick() {
+            if (this.isEditing) {
+                this.toggleAccordion();
+            }
+        },
     },
 };
 </script>
