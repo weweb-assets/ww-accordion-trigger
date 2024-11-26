@@ -18,10 +18,11 @@ export default {
     },
     emits: [],
     setup() {
+        const { isEditing } = ref(props.wwEditorState.value.editMode);
         const { toggleAccordion } = inject('weweb-assets/ww-accordion-item');
 
         const handleClick = () => {
-            if (props.wwEditorState.value.editMode === wwLib.wwEditorHelper.EDIT_MODES.EDITION) {
+            if (isEditing === wwLib.wwEditorHelper.EDIT_MODES.EDITION) {
                 toggleAccordion();
             }
         }
