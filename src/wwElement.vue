@@ -20,17 +20,17 @@ export default {
     setup() {
         const { toggleAccordion } = inject('weweb-assets/ww-accordion-item');
 
-        return {
-            toggleAccordion,
-        };
-    },
-    methods: {
-        handleClick() {
-            if (this.wwEditorState.editMode === wwLib.wwEditorHelper.EDIT_MODES.EDITION) {
+        const handleClick = () => {
+            if (wwEditorState.value.editMode === wwLib.wwEditorHelper.EDIT_MODES.EDITION) {
                 toggleAccordion();
             }
         }
-    }
+
+        return {
+            toggleAccordion,
+            handleClick,
+        };
+    },
 };
 </script>
 
