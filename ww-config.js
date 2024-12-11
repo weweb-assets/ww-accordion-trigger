@@ -1,6 +1,6 @@
 export default {
     inherit: {
-        type: "ww-layout",
+        type: 'ww-layout',
     },
     options: {
         autoByContent: true,
@@ -27,6 +27,19 @@ export default {
         contentLayout: {
             hidden: true,
             defaultValue: [],
+        },
+        openOnClick: {
+            label: {
+                en: 'Open on click',
+            },
+            type: 'OnOff',
+            section: 'settings',
+            description: {
+                en: 'Open the accordion on click',
+                fr: "Ouvre l'accordéon au clic",
+            },
+            defaultValue: false,
+            bindable: true,
         },
     },
 };

@@ -33,7 +33,7 @@ export default {
     },
     methods: {
         handleClick() {
-            if (!this.isEditing) {
+            if (!this.isEditing && this.openOnClick) {
                 this.toggleAccordion();
             }
         },
