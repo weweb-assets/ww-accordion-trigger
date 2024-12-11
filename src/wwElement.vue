@@ -18,10 +18,10 @@ export default {
     },
     emits: [],
     setup() {
-        const { toggleThisAccordion } = inject('weweb-assets/ww-accordion-item');
+        const { toggleAccordion } = inject('weweb-assets/ww-accordion-item');
 
         return {
-            toggleThisAccordion,
+            toggleAccordion,
         };
     },
     computed: {
@@ -34,7 +34,7 @@ export default {
     methods: {
         handleClick() {
             if (!this.isEditing) {
-                this.toggleThisAccordion();
+                this.toggleAccordion();
             }
         },
     },
